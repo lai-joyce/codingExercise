@@ -41,6 +41,8 @@ requirejs(['asana'], function(Asana) {
 			for (var i=0; i<list.length; i++) {
 				
 				var listItem = list[i];
+
+				var taskLinkRoot = "https://app.asana.com/0/509447039615083/";
 				
 				//start dumping to HTML here
 				var wellSection = $("<div>");
@@ -50,10 +52,13 @@ requirejs(['asana'], function(Asana) {
 
 				wellSection.append("<h3>" + listItem.name + "</h3>");
 				wellSection.append("<h4>" + listItem.id + "</h4>");
-				wellSection.append("<button>Hide</button>");
+				wellSection.append("<p><a href=" + taskLinkRoot + listItem.id + ">" + "view task" + "</a></p>");
+				wellSection.append("<p><button>Hide</button></p>");
+
+				// $("#articleWell-" + i).append("<a href=" + NYTData.response.docs[i].web_url + ">" + NYTData.response.docs[i].web_url + "</a>");
 
 			}
-			
+
 		});
 		
 	}
