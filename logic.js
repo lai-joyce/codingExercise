@@ -51,7 +51,7 @@ requirejs(['asana'], function(Asana) {
 				wellSection.append("<h3>" + listItem.name + "</h3>");
 				wellSection.append("<h4>" + listItem.id + "</h4>");
 				wellSection.append("<p><a href=" + taskLinkRoot + listItem.id + ">" + "view task" + "</a></p>");
-				wellSection.append("<p><button type='submit' class='removeButton'>Hide</button></p>");
+				wellSection.append("<p><button type='button' class='hideButton'>Hide</button></p>");
 
 			}
 
@@ -67,6 +67,16 @@ requirejs(['asana'], function(Asana) {
 		runQuery(numResults);
 
 		return false;
+	});
+
+	$("#wellSection").on("click", ".hideButton", function() {
+
+		// $("#wellSection").remove();
+
+		// $("#" + listItem.id).empty();
+
+		$(this).parent().parent().hide();
+
 	});
 });
 
