@@ -51,9 +51,7 @@ requirejs(['asana'], function(Asana) {
 				wellSection.append("<h3>" + listItem.name + "</h3>");
 				wellSection.append("<h4>" + listItem.id + "</h4>");
 				wellSection.append("<p><a href=" + taskLinkRoot + listItem.id + ">" + "view task" + "</a></p>");
-				wellSection.append("<p><button>Hide</button></p>");
-
-				// $("#articleWell-" + i).append("<a href=" + NYTData.response.docs[i].web_url + ">" + NYTData.response.docs[i].web_url + "</a>");
+				wellSection.append("<p><button type='submit' class='removeButton'>Hide</button></p>");
 
 			}
 
