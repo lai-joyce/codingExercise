@@ -1,8 +1,6 @@
 var client;
 requirejs(['asana'], function(Asana) {
 
-	// var queryURLBase = "https://app.asana.com/api/1.0/projects/509441869162210/tasks";
-
 	//entire response object will be stored in taskData
 	function runQuery(numTasks) {
 
@@ -66,7 +64,7 @@ requirejs(['asana'], function(Asana) {
 	$("#searchBtn").on("click", function() {
 		//alert("test");
 
-		var numResults = 8;
+		var numResults;
 
 		runQuery(numResults);
 
