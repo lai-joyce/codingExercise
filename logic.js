@@ -1,4 +1,4 @@
-var client;
+// var client;
 requirejs(['asana'], function(Asana) {
 
 	//entire response object will be stored in taskData

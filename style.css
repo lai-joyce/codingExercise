@@ -1,0 +1,5 @@
+.img-responsive {
+	min-height: 12em;
+  display: table-cell;
+  vertical-align: middle;
+}
