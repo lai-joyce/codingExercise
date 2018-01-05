@@ -36,10 +36,6 @@ requirejs(['asana'], function(Asana) {
 
 			$("#wellSection").empty();
 
-			// var jumbotronDiv = $("<div>");
-			// $(".jumbotron").append(jumbotronDiv);
-			// jumbotronDiv.append("<h3>" + workspaces[0].id + "</h3>");
-
 			for (var i=0; i<list.length; i++) {
 				
 				var listItem = list[i];
