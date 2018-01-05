@@ -1,7 +1,7 @@
 // var client;
 requirejs(['asana'], function(Asana) {
 
-	//entire response object will be stored in taskData
+	//from GitHub examples under Asana/node-asana repo 
 	function runQuery(numTasks) {
 
 		var client = Asana.
@@ -20,7 +20,7 @@ requirejs(['asana'], function(Asana) {
 		    	assignee: userId,
 		    	workspace: workspaceId,
 		      //completed_since: 'now',
-		      opt_fields: 'id,name,assignee_status,completed'
+		      opt_fields: 'id,name,assignee_status,completed,workspace'
 		  });
 		})
 		.then(function(response) {
@@ -35,6 +35,10 @@ requirejs(['asana'], function(Asana) {
 		.then(function(list) {
 
 			$("#wellSection").empty();
+
+			// var jumbotronDiv = $("<div>");
+			// $(".jumbotron").append(jumbotronDiv);
+			// jumbotronDiv.append("<h3>" + workspaces[0].id + "</h3>");
 
 			for (var i=0; i<list.length; i++) {
 				
@@ -59,6 +63,7 @@ requirejs(['asana'], function(Asana) {
 		
 	}
 
+	//click-event handler to list tasks
 	$("#searchBtn").on("click", function() {
 		//alert("test");
 
@@ -69,6 +74,7 @@ requirejs(['asana'], function(Asana) {
 		return false;
 	});
 
+	//click-event handler for the 'hide' button
 	$("#wellSection").on("click", ".hideButton", function() {
 
 		// $("#wellSection").remove();
