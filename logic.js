@@ -12,9 +12,15 @@ requirejs(['asana'], function(Asana) {
 		client.users.me()
 		.then(function(user) {
 			var userId = user.id;
-		    // The user's "default" workspace is the first one in the list, though
-		    // any user can have multiple workspaces so you can't always assume this
-		    // is the one you want to work with.
+			// console.log(user.workspaces[0].name);
+
+			$("h3").empty();
+
+			var jumbotronDiv = $("<div>");
+			$(".jumbotron").append(jumbotronDiv);
+			jumbotronDiv.append("<h3>" + "Project Name: " + user.workspaces[0].name + "</h3>");
+			
+
 		    var workspaceId = user.workspaces[0].id;
 		    return client.tasks.findAll({
 		    	assignee: userId,
@@ -22,6 +28,8 @@ requirejs(['asana'], function(Asana) {
 		      //completed_since: 'now',
 		      opt_fields: 'id,name,assignee_status,completed,workspace'
 		  });
+
+			
 		})
 		.then(function(response) {
 		    // There may be more pages of data, we could stream or return a promise
