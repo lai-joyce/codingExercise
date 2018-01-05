@@ -48,6 +48,8 @@ requirejs(['asana'], function(Asana) {
 				
 				var listItem = list[i];
 
+				var queryURL = "https://app.asana.com/api/1.0/projects/509447039615083/";
+
 				var taskLinkRoot = "https://app.asana.com/0/509447039615083/";
 				
 				//start dumping to HTML here
